@@ -1,0 +1,57 @@
+{% set name = "anaconda-catalogs" %}
+{% set version = "0.2.0" %}
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/anaconda/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 333
+
+build:
+  number: 0
+  skip: true  # [py<38]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --ignore-installed
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools
+    - setuptools-scm 7.0.4
+    - toml
+    - wheel
+    - setuptools
+    - wheel
+  run:
+    - python
+    - aiohttp
+    - intake
+    - requests
+
+test:
+  source_files:
+    - tests
+  imports:
+    - anaconda_catalogs
+  requires:
+    - pytest
+  commands:
+    - pytest
+
+about:
+  home: https://github.com/anaconda/anaconda-catalogs
+  dev_url: https://github.com/anaconda/anaconda-catalogs
+  doc_url: https://github.com/anaconda/anaconda-catalogs
+  summary: Client library to interface with Nucleus catalogs service
+  description: |
+    Client library to interface with Nucleus catalogs service
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - skupr-anaconda
+  skip-lints:
+    - missing_pip_check
