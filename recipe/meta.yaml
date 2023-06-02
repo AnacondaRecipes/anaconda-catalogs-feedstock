@@ -21,8 +21,6 @@ requirements:
     - setuptools-scm 7.0.4
     - toml
     - wheel
-    - setuptools
-    - wheel
   run:
     - python
     - aiohttp
