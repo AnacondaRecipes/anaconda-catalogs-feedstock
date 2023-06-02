@@ -41,9 +41,9 @@ about:
   home: https://github.com/anaconda/anaconda-catalogs
   dev_url: https://github.com/anaconda/anaconda-catalogs
   doc_url: https://github.com/anaconda/anaconda-catalogs
-  summary: Client library to interface with Nucleus catalogs service
+  summary: Client library to interface with Anaconda Cloud catalogs service
   description: |
-    Client library to interface with Nucleus catalogs service
+    Client library to interface with Anaconda Cloud catalogs service
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
