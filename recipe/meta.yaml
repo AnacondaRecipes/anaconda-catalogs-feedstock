@@ -9,7 +9,7 @@ source:
   sha256: 9f9396ced850ec377fd6ef0d9be43bb6f62dd0a61da69582d077458e3bb12e7d
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --ignore-installed
 
@@ -18,7 +18,7 @@ requirements:
     - python
     - pip
     - setuptools
-    - setuptools-scm 7.0.4
+    - setuptools-scm
     - toml
     - wheel
   run:
