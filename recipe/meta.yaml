@@ -9,7 +9,7 @@ source:
   sha256: 9f9396ced850ec377fd6ef0d9be43bb6f62dd0a61da69582d077458e3bb12e7d
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --ignore-installed
 
@@ -26,6 +26,7 @@ requirements:
     - aiohttp
     - intake
     - requests
+    - jinja2 # extra needed by intake for catalogs utils
 
 test:
   source_files:
@@ -38,9 +39,9 @@ test:
     - pytest
 
 about:
-  home: https://github.com/anaconda/anaconda-catalogs
-  dev_url: https://github.com/anaconda/anaconda-catalogs
-  doc_url: https://github.com/anaconda/anaconda-catalogs
+  home: https://github.com/anaconda/anaconda-cloud-tools
+  dev_url: https://github.com/anaconda/anaconda-cloud-tools
+  doc_url: https://github.com/anaconda/anaconda-cloud-tools
   summary: Client library to interface with Anaconda Cloud catalogs service
   description: |
     Client library to interface with Anaconda Cloud catalogs service
