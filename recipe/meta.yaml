@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 9f9396ced850ec377fd6ef0d9be43bb6f62dd0a61da69582d077458e3bb12e7d
 
 build:
@@ -26,7 +26,7 @@ requirements:
     - aiohttp
     - intake
     - requests
-    - jinja2 # extra needed by intake for catalogs utils
+    - jinja2    # extra needed by intake for catalogs utils
 
 test:
   source_files:
@@ -34,6 +34,7 @@ test:
   imports:
     - anaconda_catalogs
   requires:
+    - pip
     - pytest
   commands:
     - pip check
