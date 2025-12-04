@@ -9,7 +9,7 @@ source:
   sha256: 9f9396ced850ec377fd6ef0d9be43bb6f62dd0a61da69582d077458e3bb12e7d
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --ignore-installed
 
@@ -18,7 +18,7 @@ requirements:
     - python
     - pip
     - setuptools
-    - setuptools-scm
+    - setuptools-scm >=6.2
     - toml
     - wheel
   run:
@@ -36,7 +36,9 @@ test:
   requires:
     - pytest
   commands:
-    - pytest
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -ra -v
 
 about:
   home: https://github.com/anaconda/anaconda-cloud-tools
